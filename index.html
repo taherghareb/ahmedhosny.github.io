@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmed Hosny Salon | صالون حلاقة وتجميل رجالي - الإسكندرية</title>
+    <meta name="description" content="أفضل صالون حلاقة رجالي في الإسكندرية - قص شعر، حلاقة دقن، تنظيف بشرة، بروتين، صبغة - أسعار مميزة وجودة عالية">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        body {
+            background-color: #1A1A1A;
+            color: #FFFFFF;
+        }
+        
+        /* Header */
+        header {
+            background-color: #000000;
+            padding: 20px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 900;
+            color: #D4AF37;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #D4AF37;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-1.2.1&auto=format&fit=crop&w=1480&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            margin-top: 80px;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #D4AF37;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            max-width: 700px;
+        }
+        
+        .btn {
+            background-color: #D4AF37;
+            color: #000000;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+        
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+        }
+        
+        /* Services */
+        .services {
+            padding: 80px 10%;
+            background-color: #2C3E50;
+        }
+        
+        .services h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: #D4AF37;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: #1A1A1A;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: 0.5s;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        .service-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #D4AF37;
+        }
+        
+        .price {
+            font-size: 22px;
+            color: #D4AF37;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        
+        .offer-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 18px;
+            margin-left: 10px;
+        }
+        
+        .gift-badge {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            background: #e74c3c;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+        }
+        
+        .service-badge {
+            background: #D4AF37;
+            color: #000;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            position: absolute;
+            top: -10px;
+            right: 15px;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Booking Form */
+        .booking-form {
+            background-color: #2C3E50;
+            padding: 40px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 50px auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        .booking-form h2 {
+            text-align: center;
+            color: #D4AF37;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #FFFFFF;
+            font-weight: 700;
+        }
+        
+        .form-group input, 
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #444;
+            border-radius: 5px;
+            background-color: #1A1A1A;
+            color: #FFFFFF;
+            font-size: 16px;
+        }
+        
+        .services-checkbox {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .service-option {
+            background-color: #1A1A1A;
+            padding: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            border: 1px solid #444;
+            position: relative;
+            text-align: center;
+        }
+        
+        .service-option:hover {
+            background-color: #D4AF37;
+            color: #000000;
+        }
+        
+        .service-option input {
+            margin-left: 8px;
+        }
+        
+        .service-option .service-price {
+            background: #D4AF37;
+            color: #000;
+            padding: 2px 8px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+            display: block;
+            margin-top: 5px;
+        }
+        
+        .submit-btn {
+            background-color: #D4AF37;
+            color: #000000;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            width: 100%;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background-color: #c9a227;
+            transform: translateY(-3px);
+        }
+        
+        /* Payment Methods */
+        .payment-methods {
+            display: none;
+            margin-top: 30px;
+            padding: 20px;
+            background: #1A1A1A;
+            border-radius: 10px;
+        }
+        
+        .payment-methods h3 {
+            color: #D4AF37;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .payment-number {
+            background: #2C3E50;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px 0;
+            color: #D4AF37;
+            border: 2px solid #D4AF37;
+        }
+        
+        .payment-option {
+            background: #1A1A1A;
+            border: 1px solid #444;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .payment-option:hover {
+            background: #D4AF37;
+            color: #000;
+        }
+        
+        .payment-option.selected {
+            background: #D4AF37;
+            color: #000;
+            border-color: #D4AF37;
+        }
+        
+        /* Error Messages */
+        .error-message {
+            color: #ff6b6b;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #000000;
+            padding: 30px 10%;
+            text-align: center;
+        }
+        
+        footer p {
+            margin-bottom: 10px;
+        }
+        
+        .social-icons {
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            color: #D4AF37;
+            font-size: 24px;
+            margin: 0 10px;
+            transition: 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: #FFFFFF;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">Ahmed Hosny Salon</div>
+        <nav>
+            <ul>
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#services">الخدمات</a></li>
+                <li><a href="#booking">الحجز</a></li>
+                <li><a href="#contact">تواصل معنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>أهلاً بك في صالون أحمد حسني</h1>
+        <p>جودة عالية | تصميم عصري | راحة لا مثيل لها</p>
+        <a href="#booking" class="btn">احجز الآن</a>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <h2>خدماتنا</h2>
+        <div class="services-grid">
+            <!-- قص الشعر -->
+            <div class="service-card">
+                <h3>قص الشعر</h3>
+                <div class="price">70 جنيه</div>
+                <p>أحدث قصات الشعر بتقنيات ثلاثية الأبعاد</p>
+            </div>
+            
+            <!-- حلاقة الدقن -->
+            <div class="service-card">
+                <h3>حلاقة الدقن</h3>
+                <div class="price">30 جنيه</div>
+                <p>تشذيب وتنسيق الذقن بأحدث الطرق</p>
+            </div>
+            
+            <!-- الاستشوار -->
+            <div class="service-card">
+                <h3>تصفيف بالاستشوار</h3>
+                <div class="price">50 جنيه</div>
+                <p>تصفيف احترافي باستخدام أفضل المنتجات</p>
+            </div>
+            
+            <!-- الفرد -->
+            <div class="service-card">
+                <h3>فرد الشعر</h3>
+                <div class="price">30 جنيه</div>
+                <p>فرد الشعر بطريقة احترافية</p>
+            </div>
+            
+            <!-- الماسك -->
+            <div class="service-card">
+                <h3>ماسك للشعر</h3>
+                <div class="price">10 جنيه</div>
+                <p>عناية فورية بالشعر</p>
+            </div>
+            
+            <!-- حمام الكريم -->
+            <div class="service-card">
+                <h3>حمام كريم</h3>
+                <div class="price">10 جنيه</div>
+                <p>ترطيب عميق للشعر</p>
+            </div>
+            
+            <!-- الشمع -->
+            <div class="service-card">
+                <h3>إزالة الشعر بالشمع</h3>
+                <div class="price">20 جنيه</div>
+                <p>للمناطق المختلفة</p>
+            </div>
+            
+            <!-- تنظيف البشرة -->
+            <div class="service-card">
+                <div class="gift-badge">الأكثر طلباً</div>
+                <h3>تنظيف البشرة</h3>
+                <div class="price">100 جنيه</div>
+                <p>جلسة تنظيف عميق للبشرة</p>
+            </div>
+            
+            <!-- البروتين -->
+            <div class="service-card">
+                <h3>علاج البروتين</h3>
+                <div class="price">
+                    400 جنيه (للشعر القصير)<br>
+                    500 جنيه (للشعر المتوسط)<br>
+                    600 جنيه (للشعر الطويل)
+                </div>
+            </div>
+            
+            <!-- الصبغة -->
+            <div class="service-card">
+                <h3>صبغة الشعر</h3>
+                <div class="price">
+                    50 جنيه (للمسة خفيفة)<br>
+                    250 جنيه (صبغة كاملة)
+                </div>
+            </div>
+            
+            <!-- المكواة -->
+            <div class="service-card">
+                <h3>تمليس بالمكواة</h3>
+                <div class="price">50 جنيه</div>
+                <p>لمعان ونعومة فورية</p>
+            </div>
+            
+            <!-- باقة العريس -->
+            <div class="service-card" style="grid-column: span 2;">
+                <div class="gift-badge">عرض خاص</div>
+                <h3>باقة العريس الكاملة</h3>
+                <div class="price">300 جنيه <span class="offer-price">500 جنيه</span></div>
+                <p>تشمل: قص شعر، حلاقة دقن، تنظيف بشرة، ماسك، تصفيف</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form -->
+    <section class="booking-form" id="booking">
+        <h2>احجز موعدك الآن</h2>
+        <form id="bookingForm">
+            <!-- Name -->
+            <div class="form-group">
+                <label for="firstName">الاسم الأول*</label>
+                <input type="text" id="firstName" name="firstName" required
+                       oninvalid="this.setCustomValidity('الرجاء إدخال الاسم الأول')"
+                       oninput="this.setCustomValidity('')">
+                <div id="firstNameError" class="error-message">الرجاء إدخال الاسم الأول</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="lastName">الاسم الأخير*</label>
+                <input type="text" id="lastName" name="lastName" required
+                       oninvalid="this.setCustomValidity('الرجاء إدخال الاسم الأخير')"
+                       oninput="this.setCustomValidity('')">
+                <div id="lastNameError" class="error-message">الرجاء إدخال الاسم الأخير</div>
+            </div>
+            
+            <!-- Phone -->
+            <div class="form-group">
+                <label for="phone">رقم التليفون*</label>
+                <input type="tel" id="phone" name="phone" pattern="01[0125][0-9]{8}" required
+                       oninvalid="this.setCustomValidity('الرجاء إدخال رقم هاتف مصري صحيح (11 رقم)')"
+                       oninput="this.setCustomValidity('')">
+                <div id="phoneError" class="error-message">الرجاء إدخال رقم هاتف مصري صحيح (يبدأ بـ 010، 011، 012، أو 015)</div>
+            </div>
+            
+            <!-- Date & Time -->
+            <div class="form-group">
+                <label for="date">تاريخ الحجز*</label>
+                <input type="date" id="date" name="date" required
+                       oninvalid="this.setCustomValidity('الرجاء اختيار تاريخ صحيح')"
+                       oninput="this.setCustomValidity('')">
+                <div id="dateError" class="error-message">الرجاء اختيار تاريخ صحيح</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="time">وقت الحجز*</label>
+                <select id="time" name="time" required
+                        oninvalid="this.setCustomValidity('الرجاء اختيار الوقت')"
+                        oninput="this.setCustomValidity('')">
+                    <option value="">اختر الوقت</option>
+                    <option value="12:00 م">12:00 ظهراً</option>
+                    <option value="01:00 م">01:00 عصراً</option>
+                    <option value="02:00 م">02:00 عصراً</option>
+                    <option value="03:00 م">03:00 عصراً</option>
+                    <option value="04:00 م">04:00 عصراً</option>
+                    <option value="05:00 م">05:00 مساءً</option>
+                    <option value="06:00 م">06:00 مساءً</option>
+                    <option value="07:00 م">07:00 مساءً</option>
+                    <option value="08:00 م">08:00 مساءً</option>
+                    <option value="09:00 م">09:00 مساءً</option>
+                    <option value="10:00 م">10:00 مساءً</option>
+                    <option value="11:00 م">11:00 مساءً</option>
+                    <option value="12:00 ص">12:00 منتصف الليل</option>
+                </select>
+                <div id="timeError" class="error-message">الرجاء اختيار الوقت</div>
+            </div>
+            
+            <!-- Services -->
+            <div class="form-group">
+                <label>الخدمات المطلوبة*</label>
+                <div class="services-checkbox" id="servicesContainer">
+                    <label class="service-option">
+                        <input type="checkbox" name="service" value="haircut" data-price="70">
+                        <span>قص الشعر</span>
+                        <span class="service-price">70 ج</span>
+                    </label>
+                    
+                    <label class="service-option">
+                        <input type="checkbox" name="service" value="beard" data-price="30">
+                        <span>حلاقة الدقن</span>
+                        <span class="service-price">30 ج</span>
+                    </label>
+                    
+                    <label class="service-option">
+                        <input type="checkbox" name="service" value="blowdry" data-price="50">
+                        <span>استشوار</span>
+                        <span class="service-price">50 ج</span>
+                    </label>
+                    
+                    <label class="service-option">
+                        <input type="checkbox" name="service" value="straightening" data-price="30">
+                        <span>فرد</span>
+                        <span class="service-price">30 ج</span>
+                    </label>
+                    
+                    <label class="service-option">
+                        <input type="checkbox" name="service" value="mask" data-price="10">
+                        <span>ماسك</span>
+                        <span class="service-price">10 ج</span>
+                    </label>
+                    
+                    <label class="service-option">
+                        <input type="checkbox" name="service" value="cream-bath" data-price="10">
+                        <span>حمام كريم</span>
+                        <span class="service-price">10 ج</span>
+                    </label>
+                    
+                    <label class="service-option">
+                        <input type="checkbox" name="service" value="waxing" data-price="20">
+                        <span>شمع</span>
+                        <span class="service-price">20 ج</span>
+                    </label>
+                    
+                    <label class="service-option">
+                        <input type="checkbox" name="service" value="facial" data-price="100">
+                        <span>تنظيف بشرة</span>
+                        <span class="service-price">100 ج</span>
+                    </label>
+                    
+                    <label class="service-option">
+                        <input type="radio" name="protein" value="protein-400" data-price="400">
+                        <span>بروتين (400ج)</span>
+                    </label>
+                    
+                    <label class="service-option">
+                        <input type="radio" name="protein" value="protein-500" data-price="500">
+                        <span>بروتين (500ج)</span>
+                    </label>
+                    
+                    <label class="service-option">
+                        <input type="radio" name="protein" value="protein-600" data-price="600">
+                        <span>بروتين (600ج)</span>
+                    </label>
+                    
+                    <label class="service-option">
+                        <input type="radio" name="dye" value="dye-light" data-price="50">
+                        <span>صبغة خفيفة (50ج)</span>
+                    </label>
+                    
+                    <label class="service-option">
+                        <input type="radio" name="dye" value="dye-full" data-price="250">
+                        <span>صبغة كاملة (250ج)</span>
+                    </label>
+                    
+                    <label class="service-option">
+                        <input type="checkbox" name="service" value="iron" data-price="50">
+                        <span>مكواة</span>
+                        <span class="service-price">50 ج</span>
+                    </label>
+                    
+                    <label class="service-option" style="grid-column: span 2;">
+                        <input type="checkbox" name="service" value="groom-package" data-price="300">
+                        <span>باقة العريس</span>
+                        <span class="service-price">300 ج <del>500 ج</del></span>
+                    </label>
+                </div>
+                <div id="servicesError" class="error-message">الرجاء اختيار خدمة واحدة على الأقل</div>
+            </div>
+            
+            <!-- Notes -->
+            <div class="form-group">
+                <label for="notes">ملاحظات إضافية (اختياري)</label>
+                <textarea id="notes" name="notes" rows="3"></textarea>
+            </div>
+            
+            <button type="button" id="bookBtn" class="submit-btn">احجز الآن</button>
+            
+            <!-- Payment Methods -->
+            <div id="paymentMethods" class="payment-methods">
+                <h3>طريقة الدفع</h3>
+                
+                <div class="payment-option" data-method="vodafone">
+                    <input type="radio" name="payment" id="vodafone" value="vodafone" hidden>
+                    <label for="vodafone">فودافون كاش</label>
+                </div>
+                
+                <div class="payment-option" data-method="instapay">
+                    <input type="radio" name="payment" id="instapay" value="instapay" hidden>
+                    <label for="instapay">انستاباي</label>
+                </div>
+                
+                <div id="paymentDetails" style="display:none;">
+                    <div class="payment-number">01111163835</div>
+                    <p>برجاء تحويل المبلغ إلى الرقم أعلاه ثم الضغط على تأكيد الحجز</p>
+                    <div class="form-group">
+                        <label for="transactionNumber">رقم التحويل (اختياري)</label>
+                        <input type="text" id="transactionNumber" placeholder="للمساعدة في التأكيد">
+                    </div>
+                    <button id="confirmPayment" class="submit-btn">تأكيد الحجز</button>
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <p>Ahmed Hosny Salon</p>
+        <p>العنوان: شارع 16، الاسكندريه</p>
+        <p>الهاتف: <span style="color: #D4AF37;">📞 01111163835</span></p>
+        <div class="social-icons">
+            <a href="https://wa.me/201111163835" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
+    </footer>
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
+    <!-- Scripts -->
+    <script>
+        // Set minimum date to today
+        document.getElementById('date').min = new Date().toISOString().split('T')[0];
+        
+        // Calculate total price
+        document.getElementById('bookBtn').addEventListener('click', function() {
+            let total = 0;
+            const selectedServices = [];
+            
+            // Regular services
+            document.querySelectorAll('input[type="checkbox"]:checked').forEach(service => {
+                total += parseInt(service.dataset.price);
+                selectedServices.push(service.value);
+            });
+            
+            // Protein (radio buttons)
+            const protein = document.querySelector('input[name="protein"]:checked');
+            if (protein) {
+                total += parseInt(protein.dataset.price);
+                selectedServices.push(protein.value);
+            }
+            
+            // Dye (radio buttons)
+            const dye = document.querySelector('input[name="dye"]:checked');
+            if (dye) {
+                total += parseInt(dye.dataset.price);
+                selectedServices.push(dye.value);
+            }
+            
+            if (selectedServices.length === 0) {
+                document.getElementById('servicesError').style.display = 'block';
+                return;
+            } else {
+                document.getElementById('servicesError').style.display = 'none';
+            }
+            
+            // Show payment methods
+            document.getElementById('paymentMethods').style.display = 'block';
+            window.scrollTo({
+                top: document.getElementById('paymentMethods').offsetTop - 100,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Payment system
+        const paymentOptions = document.querySelectorAll('.payment-option');
+        paymentOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                paymentOptions.forEach(opt => opt.classList.remove('selected'));
+                this.classList.add('selected');
+                document.getElementById('paymentDetails').style.display = 'block';
+            });
+        });
+        
+        // Confirm booking
+        document.getElementById('confirmPayment').addEventListener('click', function() {
+            alert('تم تأكيد الحجز بنجاح! سيتم التواصل معك لتأكيد الموعد.');
+            document.getElementById('bookingForm').reset();
+            document.getElementById('paymentMethods').style.display = 'none';
+            document.getElementById('paymentDetails').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
