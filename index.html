@@ -11,6 +11,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
     
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         * {
             margin: 0;
@@ -102,11 +105,18 @@
             cursor: pointer;
             transition: 0.3s;
             text-decoration: none;
+            display: inline-block;
+            margin: 10px;
         }
         
         .btn:hover {
             transform: scale(1.05);
             box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+        }
+        
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
         }
         
         /* Services */
@@ -174,17 +184,6 @@
             font-size: 12px;
             font-weight: bold;
             animation: pulse 2s infinite;
-        }
-        
-        .service-badge {
-            background: #D4AF37;
-            color: #000;
-            padding: 3px 10px;
-            border-radius: 15px;
-            font-size: 12px;
-            position: absolute;
-            top: -10px;
-            right: 15px;
         }
         
         @keyframes pulse {
@@ -339,6 +338,41 @@
             border-color: #D4AF37;
         }
         
+        /* WhatsApp Booking */
+        .whatsapp-booking {
+            background-color: #1A1A1A;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .whatsapp-booking h3 {
+            color: #25D366;
+            margin-bottom: 20px;
+        }
+        
+        .whatsapp-btn {
+            background-color: #25D366;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+            transform: scale(1.05);
+        }
+        
         /* Error Messages */
         .error-message {
             color: #ff6b6b;
@@ -393,6 +427,9 @@
         <h1>أهلاً بك في صالون أحمد حسني</h1>
         <p>جودة عالية | تصميم عصري | راحة لا مثيل لها</p>
         <a href="#booking" class="btn">احجز الآن</a>
+        <a href="https://wa.me/201111163835" class="btn btn-whatsapp">
+            <i class="fab fa-whatsapp"></i> تواصل عبر واتساب
+        </a>
     </section>
 
     <!-- Services -->
@@ -489,167 +526,97 @@
                 <div class="price">300 جنيه <span class="offer-price">500 جنيه</span></div>
                 <p>تشمل: قص شعر، حلاقة دقن، تنظيف بشرة، ماسك، تصفيف</p>
             </div>
+            
+            <!-- خدمات إضافية -->
+            <div class="service-card">
+                <h3>تصفيف الشعر</h3>
+                <div class="price">40 جنيه</div>
+                <p>تصفيف احترافي للشعر</p>
+            </div>
+            
+            <div class="service-card">
+                <h3>صبغة الحنة</h3>
+                <div class="price">60 جنيه</div>
+                <p>صبغة طبيعية بالحنة</p>
+            </div>
+            
+            <div class="service-card">
+                <h3>مساج فروة الرأس</h3>
+                <div class="price">80 جنيه</div>
+                <p>لتحفيز نمو الشعر</p>
+            </div>
+            
+            <div class="service-card">
+                <h3>تفتيح اللحية</h3>
+                <div class="price">90 جنيه</div>
+                <p>لإطلالة أكثر أناقة</p>
+            </div>
         </div>
     </section>
 
     <!-- Booking Form -->
     <section class="booking-form" id="booking">
         <h2>احجز موعدك الآن</h2>
+        
+        <!-- نظام الحجز عبر واتساب -->
+        <div class="whatsapp-booking">
+            <h3><i class="fab fa-whatsapp"></i> الحجز عبر واتساب</h3>
+            <p>لحجز موعد بسهولة وسرعة، يمكنك التواصل معنا مباشرة عبر واتساب</p>
+            <a href="https://wa.me/201111163835?text=أريد%20حجز%20موعد%20في%20صالون%20أحمد%20حسني" class="whatsapp-btn">
+                <i class="fab fa-whatsapp"></i> اضغط هنا للحجز
+            </a>
+        </div>
+        
+        <!-- نظام الحجز المتكامل -->
         <form id="bookingForm">
-            <!-- Name -->
             <div class="form-group">
-                <label for="firstName">الاسم الأول*</label>
-                <input type="text" id="firstName" name="firstName" required
-                       oninvalid="this.setCustomValidity('الرجاء إدخال الاسم الأول')"
-                       oninput="this.setCustomValidity('')">
-                <div id="firstNameError" class="error-message">الرجاء إدخال الاسم الأول</div>
+                <label for="fullName">الاسم بالكامل*</label>
+                <input type="text" id="fullName" required>
             </div>
             
             <div class="form-group">
-                <label for="lastName">الاسم الأخير*</label>
-                <input type="text" id="lastName" name="lastName" required
-                       oninvalid="this.setCustomValidity('الرجاء إدخال الاسم الأخير')"
-                       oninput="this.setCustomValidity('')">
-                <div id="lastNameError" class="error-message">الرجاء إدخال الاسم الأخير</div>
-            </div>
-            
-            <!-- Phone -->
-            <div class="form-group">
-                <label for="phone">رقم التليفون*</label>
-                <input type="tel" id="phone" name="phone" pattern="01[0125][0-9]{8}" required
-                       oninvalid="this.setCustomValidity('الرجاء إدخال رقم هاتف مصري صحيح (11 رقم)')"
-                       oninput="this.setCustomValidity('')">
-                <div id="phoneError" class="error-message">الرجاء إدخال رقم هاتف مصري صحيح (يبدأ بـ 010، 011، 012، أو 015)</div>
-            </div>
-            
-            <!-- Date & Time -->
-            <div class="form-group">
-                <label for="date">تاريخ الحجز*</label>
-                <input type="date" id="date" name="date" required
-                       oninvalid="this.setCustomValidity('الرجاء اختيار تاريخ صحيح')"
-                       oninput="this.setCustomValidity('')">
-                <div id="dateError" class="error-message">الرجاء اختيار تاريخ صحيح</div>
+                <label for="phoneNumber">رقم الهاتف*</label>
+                <input type="tel" id="phoneNumber" required>
             </div>
             
             <div class="form-group">
-                <label for="time">وقت الحجز*</label>
-                <select id="time" name="time" required
-                        oninvalid="this.setCustomValidity('الرجاء اختيار الوقت')"
-                        oninput="this.setCustomValidity('')">
-                    <option value="">اختر الوقت</option>
-                    <option value="12:00 م">12:00 ظهراً</option>
-                    <option value="01:00 م">01:00 عصراً</option>
-                    <option value="02:00 م">02:00 عصراً</option>
-                    <option value="03:00 م">03:00 عصراً</option>
-                    <option value="04:00 م">04:00 عصراً</option>
-                    <option value="05:00 م">05:00 مساءً</option>
-                    <option value="06:00 م">06:00 مساءً</option>
-                    <option value="07:00 م">07:00 مساءً</option>
-                    <option value="08:00 م">08:00 مساءً</option>
-                    <option value="09:00 م">09:00 مساءً</option>
-                    <option value="10:00 م">10:00 مساءً</option>
-                    <option value="11:00 م">11:00 مساءً</option>
-                    <option value="12:00 ص">12:00 منتصف الليل</option>
+                <label for="serviceType">الخدمة المطلوبة*</label>
+                <select id="serviceType" required>
+                    <option value="">اختر الخدمة</option>
+                    <option value="قص الشعر - 70 جنيه">قص الشعر - 70 جنيه</option>
+                    <option value="حلاقة الدقن - 30 جنيه">حلاقة الدقن - 30 جنيه</option>
+                    <option value="باقة العريس - 300 جنيه">باقة العريس - 300 جنيه</option>
+                    <option value="تنظيف البشرة - 100 جنيه">تنظيف البشرة - 100 جنيه</option>
+                    <option value="بروتين للشعر القصير - 400 جنيه">بروتين للشعر القصير - 400 جنيه</option>
+                    <option value="بروتين للشعر المتوسط - 500 جنيه">بروتين للشعر المتوسط - 500 جنيه</option>
+                    <option value="بروتين للشعر الطويل - 600 جنيه">بروتين للشعر الطويل - 600 جنيه</option>
+                    <option value="صبغة خفيفة - 50 جنيه">صبغة خفيفة - 50 جنيه</option>
+                    <option value="صبغة كاملة - 250 جنيه">صبغة كاملة - 250 جنيه</option>
+                    <option value="تمليس بالمكواة - 50 جنيه">تمليس بالمكواة - 50 جنيه</option>
                 </select>
-                <div id="timeError" class="error-message">الرجاء اختيار الوقت</div>
             </div>
             
-            <!-- Services -->
             <div class="form-group">
-                <label>الخدمات المطلوبة*</label>
-                <div class="services-checkbox" id="servicesContainer">
-                    <label class="service-option">
-                        <input type="checkbox" name="service" value="haircut" data-price="70">
-                        <span>قص الشعر</span>
-                        <span class="service-price">70 ج</span>
-                    </label>
-                    
-                    <label class="service-option">
-                        <input type="checkbox" name="service" value="beard" data-price="30">
-                        <span>حلاقة الدقن</span>
-                        <span class="service-price">30 ج</span>
-                    </label>
-                    
-                    <label class="service-option">
-                        <input type="checkbox" name="service" value="blowdry" data-price="50">
-                        <span>استشوار</span>
-                        <span class="service-price">50 ج</span>
-                    </label>
-                    
-                    <label class="service-option">
-                        <input type="checkbox" name="service" value="straightening" data-price="30">
-                        <span>فرد</span>
-                        <span class="service-price">30 ج</span>
-                    </label>
-                    
-                    <label class="service-option">
-                        <input type="checkbox" name="service" value="mask" data-price="10">
-                        <span>ماسك</span>
-                        <span class="service-price">10 ج</span>
-                    </label>
-                    
-                    <label class="service-option">
-                        <input type="checkbox" name="service" value="cream-bath" data-price="10">
-                        <span>حمام كريم</span>
-                        <span class="service-price">10 ج</span>
-                    </label>
-                    
-                    <label class="service-option">
-                        <input type="checkbox" name="service" value="waxing" data-price="20">
-                        <span>شمع</span>
-                        <span class="service-price">20 ج</span>
-                    </label>
-                    
-                    <label class="service-option">
-                        <input type="checkbox" name="service" value="facial" data-price="100">
-                        <span>تنظيف بشرة</span>
-                        <span class="service-price">100 ج</span>
-                    </label>
-                    
-                    <label class="service-option">
-                        <input type="radio" name="protein" value="protein-400" data-price="400">
-                        <span>بروتين (400ج)</span>
-                    </label>
-                    
-                    <label class="service-option">
-                        <input type="radio" name="protein" value="protein-500" data-price="500">
-                        <span>بروتين (500ج)</span>
-                    </label>
-                    
-                    <label class="service-option">
-                        <input type="radio" name="protein" value="protein-600" data-price="600">
-                        <span>بروتين (600ج)</span>
-                    </label>
-                    
-                    <label class="service-option">
-                        <input type="radio" name="dye" value="dye-light" data-price="50">
-                        <span>صبغة خفيفة (50ج)</span>
-                    </label>
-                    
-                    <label class="service-option">
-                        <input type="radio" name="dye" value="dye-full" data-price="250">
-                        <span>صبغة كاملة (250ج)</span>
-                    </label>
-                    
-                    <label class="service-option">
-                        <input type="checkbox" name="service" value="iron" data-price="50">
-                        <span>مكواة</span>
-                        <span class="service-price">50 ج</span>
-                    </label>
-                    
-                    <label class="service-option" style="grid-column: span 2;">
-                        <input type="checkbox" name="service" value="groom-package" data-price="300">
-                        <span>باقة العريس</span>
-                        <span class="service-price">300 ج <del>500 ج</del></span>
-                    </label>
-                </div>
-                <div id="servicesError" class="error-message">الرجاء اختيار خدمة واحدة على الأقل</div>
+                <label for="bookingDate">تاريخ الحجز*</label>
+                <input type="date" id="bookingDate" required>
             </div>
             
-            <!-- Notes -->
             <div class="form-group">
-                <label for="notes">ملاحظات إضافية (اختياري)</label>
-                <textarea id="notes" name="notes" rows="3"></textarea>
+                <label for="bookingTime">وقت الحجز*</label>
+                <select id="bookingTime" required>
+                    <option value="">اختر الوقت</option>
+                    <option value="10:00 ص">10:00 ص</option>
+                    <option value="11:00 ص">11:00 ص</option>
+                    <option value="12:00 م">12:00 م</option>
+                    <option value="01:00 م">01:00 م</option>
+                    <option value="02:00 م">02:00 م</option>
+                    <option value="03:00 م">03:00 م</option>
+                    <option value="04:00 م">04:00 م</option>
+                    <option value="05:00 م">05:00 م</option>
+                    <option value="06:00 م">06:00 م</option>
+                    <option value="07:00 م">07:00 م</option>
+                    <option value="08:00 م">08:00 م</option>
+                </select>
             </div>
             
             <button type="button" id="bookBtn" class="submit-btn">احجز الآن</button>
@@ -687,50 +654,33 @@
         <p>العنوان: شارع 16، الاسكندريه</p>
         <p>الهاتف: <span style="color: #D4AF37;">📞 01111163835</span></p>
         <div class="social-icons">
-            <a href="https://wa.me/201111163835" target="_blank"><i class="fab fa-whatsapp"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://wa.me/201111163835" target="_blank" title="واتساب">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="#" target="_blank" title="إنستجرام">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" target="_blank" title="فيسبوك">
+                <i class="fab fa-facebook"></i>
+            </a>
         </div>
     </footer>
 
-    <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    
-    <!-- Scripts -->
     <script>
         // Set minimum date to today
-        document.getElementById('date').min = new Date().toISOString().split('T')[0];
+        document.getElementById('bookingDate').min = new Date().toISOString().split('T')[0];
         
-        // Calculate total price
+        // Booking system
         document.getElementById('bookBtn').addEventListener('click', function() {
-            let total = 0;
-            const selectedServices = [];
+            const name = document.getElementById('fullName').value;
+            const phone = document.getElementById('phoneNumber').value;
+            const service = document.getElementById('serviceType').value;
+            const date = document.getElementById('bookingDate').value;
+            const time = document.getElementById('bookingTime').value;
             
-            // Regular services
-            document.querySelectorAll('input[type="checkbox"]:checked').forEach(service => {
-                total += parseInt(service.dataset.price);
-                selectedServices.push(service.value);
-            });
-            
-            // Protein (radio buttons)
-            const protein = document.querySelector('input[name="protein"]:checked');
-            if (protein) {
-                total += parseInt(protein.dataset.price);
-                selectedServices.push(protein.value);
-            }
-            
-            // Dye (radio buttons)
-            const dye = document.querySelector('input[name="dye"]:checked');
-            if (dye) {
-                total += parseInt(dye.dataset.price);
-                selectedServices.push(dye.value);
-            }
-            
-            if (selectedServices.length === 0) {
-                document.getElementById('servicesError').style.display = 'block';
+            if (!name || !phone || !service || !date || !time) {
+                alert('الرجاء ملء جميع الحقول المطلوبة');
                 return;
-            } else {
-                document.getElementById('servicesError').style.display = 'none';
             }
             
             // Show payment methods
@@ -753,10 +703,38 @@
         
         // Confirm booking
         document.getElementById('confirmPayment').addEventListener('click', function() {
-            alert('تم تأكيد الحجز بنجاح! سيتم التواصل معك لتأكيد الموعد.');
+            const name = document.getElementById('fullName').value;
+            const phone = document.getElementById('phoneNumber').value;
+            const service = document.getElementById('serviceType').value;
+            const date = document.getElementById('bookingDate').value;
+            const time = document.getElementById('bookingTime').value;
+            const transaction = document.getElementById('transactionNumber').value;
+            
+            const formattedDate = new Date(date).toLocaleDateString('ar-EG');
+            
+            const message = `تم تأكيد الحجز بنجاح!
+            
+الاسم: ${name}
+رقم الهاتف: ${phone}
+الخدمة: ${service}
+التاريخ: ${formattedDate}
+الوقت: ${time}
+${transaction ? 'رقم التحويل: ' + transaction : ''}
+
+سيتم التواصل معك لتأكيد الموعد. شكراً لاختيارك صالون أحمد حسني`;
+
+            alert(message);
+            
+            // Reset form
             document.getElementById('bookingForm').reset();
             document.getElementById('paymentMethods').style.display = 'none';
             document.getElementById('paymentDetails').style.display = 'none';
+        });
+        
+        // WhatsApp booking
+        document.querySelector('.whatsapp-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.open(this.href, '_blank');
         });
     </script>
 </body>
